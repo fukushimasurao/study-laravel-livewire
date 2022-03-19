@@ -9,5 +9,10 @@
             {{ $post->title }}
         </li>
         @endforeach
+
     </ul>
+    <br>
+    <div>
+        {{ $posts->links() }}
+    </div>
 </div>

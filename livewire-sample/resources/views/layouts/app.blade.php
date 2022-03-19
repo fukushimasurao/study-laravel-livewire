@@ -4,14 +4,16 @@
 <meta charset="utf-8">
 <title>タイトル</title>
 @livewireStyles
+<script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-input, textarea, button {
+input, textarea {
  border: 1px solid gray;
  padding: 4px !important;
 }
 input[type=submit], input[type=button] {
   padding: 4px !important;
+  cursor: pointer;
 }
 td {
   border:1px solid gray; padding:3px;
