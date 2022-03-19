@@ -29,6 +29,8 @@ class PostCreate extends Component
     {
         $this->validate();
         $this->post->save();
+        // emitでコンポーネントからイベントを発生
+        $this->emit('created-post');
         $this->post = new Post;
     }
 

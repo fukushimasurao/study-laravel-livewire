@@ -12,6 +12,9 @@ class PostList extends Component
 
     public $word;
 
+    // emitでコンポーネントからイベントを発生させたものを受け取る。
+    protected $listeners = ['created-post' => '$refresh'];
+
     // URLパラメータ使いたい場合
     protected $queryString = [
         'word' => ['except' => ''],
