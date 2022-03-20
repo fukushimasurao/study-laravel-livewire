@@ -11,14 +11,24 @@ class PostList extends Component
     use WithPagination;
 
     public $word;
+    public $updatedPost = false;
 
-    // emitでコンポーネントからイベントを発生させたものを受け取る。
-    protected $listeners = ['created-post' => '$refresh'];
 
     // URLパラメータ使いたい場合
     protected $queryString = [
         'word' => ['except' => ''],
     ];
+
+    // emitでコンポーネントからイベントを発生させたものを受け取る。
+    protected $listeners = [
+        'created-post' => '$refresh',
+        'updated-post' => 'updatedPost',
+    ];
+
+    public function updatedPost()
+    {
+        $this->updatedPost = true;
+    }
 
     public function updatingWord()
     {

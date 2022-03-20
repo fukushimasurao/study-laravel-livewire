@@ -11,7 +11,7 @@ class PostCreate extends Component
     public Post $post;
 
     protected $rules = [
-        'post.title' => ['required', 'max:8'],
+        'post.title' => ['required', 'max:256'],
         'post.body' => ['required'],
     ];
 
