@@ -5,7 +5,7 @@
 <title>タイトル</title>
 @livewireStyles
 <script src="https://cdn.tailwindcss.com"></script>
-
+<script defer src="https://unpkg.com/alpinejs@3.8.1/dist/cdn.min.js"></script>
 <style>
 input, textarea {
  border: 1px solid gray;

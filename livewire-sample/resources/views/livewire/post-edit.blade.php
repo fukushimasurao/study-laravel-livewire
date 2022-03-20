@@ -1,5 +1,7 @@
-<div>
-    <form wire:submit.prevent="register" class="my-5 bg-sky-100">
+<div x-data="{open: @entangle('showModal').defer}">
+
+    <input type="button" value="表示を切り替える" x-on:click="open = !open">
+    <form wire:submit.prevent="register" class="my-5 bg-red-100" x-show="open">
         <div>
             タイトル：<input type="text" wire:model.lazy="post.title">
             {{-- ↓表示したりしなかったりするものは、divで囲む。詳しくはlaravelのトラブルシューティングにて。 --}}
@@ -11,20 +13,6 @@
         </div>
         <div>
             <input type="submit" value="送信する">
-            <span id="created-user-message" style="display: none">登録しました。</span>
         </div>
     </form>
-
-    @push('js')
-    <script>
-        // PostCreate.phpにて、emitで、created-postを発生させていている。
-        Livewire.on('created-post', () => {
-            const messageBox = document.getElementById('created-user-message');
-            messageBox.style.display = 'inline';
-            setTimeout(() => {
-                messageBox.style.display = 'none';
-            }, 1000);
-        });
-    </script>
-    @endpush
 </div>
